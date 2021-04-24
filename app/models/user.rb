@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, 
          :confirmable, :omniauthable, :lockable
+
+  has_many :experiences, through: :user_experience
 end
