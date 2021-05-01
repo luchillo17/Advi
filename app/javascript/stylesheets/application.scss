@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@import "materialize-css/sass/components/_color-variables.scss";
+
+$primary-color: color("purple", "lighten-2") !default;
+$secondary-color: color("green", "base") !default;
+
+@import "materialize-css";
