@@ -2,7 +2,26 @@
 
 @import "materialize-css/sass/components/_color-variables.scss";
 
-$primary-color: color("purple", "lighten-2") !default;
+$primary-color: color("deep-purple", "base") !default;
 $secondary-color: color("green", "base") !default;
 
 @import "materialize-css";
+
+.nav-wrapper {
+  display: flex;
+  padding-left: 16px;
+  justify-content: space-between;
+
+  #logo {
+    font-size: 2.1rem;
+  }
+
+  #page-title {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  #menu-icon-container {
+    height: 100%;
+  }
+}
