@@ -1,15 +1,19 @@
+<% javascript_pack_tag :home, "data-turbolinks-track" => "reload" %>
+
 <% content_for :page_title do %>
   <span><%= t :find_advisory %></span>
 <% end %>
 
 <%= render "header" %>
 
-<div id="search-container">
-  <i class="material-icons">search</i>
-  <input 
-    id="autocomplete-input" 
-    class="autocomplete" 
-    type="text"
-    placeholder="<%= t :explore %>"
-  >
+<div id="home-container">
+  <div id="search-container">
+    <i class="material-icons">search</i>
+    <input 
+      id="autocomplete-input" 
+      class="autocomplete no-autoinit" 
+      type="text"
+      placeholder="<%= t :explore %>"
+    >
+  </div>
 </div>

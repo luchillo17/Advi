@@ -15,6 +15,6 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-document.onreadystatechange = () => {
+document.addEventListener("DOMContentLoaded", () => {
   M.AutoInit();
-};
+});

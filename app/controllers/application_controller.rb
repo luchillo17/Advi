@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
     end
 
     return parsed_locale if locale_available?(parsed_locale)
-   
-    browser_locales.!empty? ? browser_locales.first : nil
+
+    !browser_locales.empty? ? browser_locales.first : nil
   end
 
   def locale_available?(locale)
