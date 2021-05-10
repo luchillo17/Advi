@@ -1,4 +1,4 @@
-<% javascript_pack_tag :home, "data-turbolinks-track" => "reload" %>
+<%= javascript_pack_tag :home %>
 
 <% content_for :page_title do %>
   <span><%= t :find_advisory %></span>
@@ -7,7 +7,7 @@
 <%= render "header" %>
 
 <div id="home-container">
-  <div id="search-container">
+  <div id="search-container" class="input-field">
     <i class="material-icons">search</i>
     <input 
       id="autocomplete-input" 
@@ -15,5 +15,20 @@
       type="text"
       placeholder="<%= t :explore %>"
     >
+  </div>
+
+  <div id="user-container">
+    <% @users.each do |user| %>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://picsum.photos/200/300">
+          <span class="card-title"><%= user.email %></span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

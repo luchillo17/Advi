@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  var autocomplete = document.querySelector("#autocomplete-input");
+  const autocomplete = document.querySelector("#autocomplete-input");
 
-  const users = await fetch(users_path);
-  console.log("Users: ", users);
-  // var instances = M.Autocomplete.init(autocomplete, options);
+  const experiences = (await (await fetch("/experiences.json")).json()) || [];
+  const data = experiences.reduce((acum, experience) => {
+    acum[experience.title] = null;
+    return acum;
+  }, {});
+
+  console.log("Experiences: ", experiences, autocomplete);
+
+  const instances = M.Autocomplete.init(autocomplete, {
+    data,
+  });
 });
