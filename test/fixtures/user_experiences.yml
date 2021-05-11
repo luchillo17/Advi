@@ -1,11 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  user_id: 1
+  experience_id: 1
   user: one
   experience: one
-  expertise_time: 
+  expertise_time: P6Y5M4DT3H2M1S
 
 two:
+  user_id: 1
+  experience_id: 1
   user: two
   experience: two
-  expertise_time: 
+  expertise_time: P6Y5M4DT3H2M1S
