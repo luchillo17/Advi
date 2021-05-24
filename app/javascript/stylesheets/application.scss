@@ -8,6 +8,8 @@ $card-padding: 1rem;
 
 @import "~materialize-css/sass/components/_variables.scss";
 
+$card-link-color: $link-color;
+
 @import "materialize-css";
 
 // #region App Styles
@@ -111,6 +113,52 @@ body {
           overflow: hidden;
           font-size: 1.2rem;
           text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+// #endregion
+
+// #region Devise styles (login, signup, forgot password...)
+#devise-links {
+  display: grid;
+  gap: 0.5rem;
+}
+
+#login-container {
+  width: 100%;
+  height: 100vh;
+  background-color: $primary-color;
+
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+  .advi-logo {
+    text-align: center;
+
+    a {
+      color: $collection-active-color;
+    }
+  }
+
+  .card {
+    width: 350px;
+
+    .card-content {
+      .card-title {
+        text-align: center;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        i {
+          margin-left: 1rem;
         }
       }
     }

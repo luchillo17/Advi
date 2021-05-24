@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'rails-i18n'
 
 # Auth
-gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'devise', '~> 4.8.0'
+gem 'devise-i18n'
 gem 'omniauth'
 
 # Use Active Storage variant

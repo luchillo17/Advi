@@ -21,6 +21,7 @@ class ExperiencesController < ApplicationController
 
   # POST /experiences or /experiences.json
   def create
+    puts Experience.all
     @experience = Experience.new(experience_params)
 
     respond_to do |format|
