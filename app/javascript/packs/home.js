@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async function () {
+const homeInit = async () => {
   const autocomplete = document.querySelector("#autocomplete-input");
 
   const experiences = (await (await fetch("/experiences.json")).json()) || [];
@@ -12,4 +12,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   const instances = M.Autocomplete.init(autocomplete, {
     data,
   });
-});
+};
+
+if (document.readyState === "complete") {
+  homeInit();
+} else {
+  addEventListener("turbolinks:load", homeInit);
+}
