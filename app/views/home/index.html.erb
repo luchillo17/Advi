@@ -17,6 +17,15 @@
     >
   </div>
 
+  <div id="experience-chips-container">
+    <% @query.each do |q| %>
+      <div class="chip">
+        <%= q %>
+        <i class="close material-icons">close</i>
+      </div>
+    <% end %>
+  </div>
+
   <div id="user-container">
     <% @users.each do |user| %>
       <div class="card">

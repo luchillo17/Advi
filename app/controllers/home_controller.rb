@@ -1,15 +1,18 @@
 class HomeController < ApplicationController
   def index
-    puts experience_query
-    return @users = User.all if experience_query["q"].nil? || experience_query["q"].empty?
+    @query = experience_query['q'] || []
 
-    @users = User.find_by_experience experience_query["q"]
-    puts @users
+    if @query.respond_to?(:empty?) && !@query.empty?
+      @users = User.find_by_experience @query
+      return
+    end
+
+    @users = User.all
   end
 
   private
-  
+
   def experience_query
-    params.permit(:q)
+    params.permit(:locale, q: [])
   end
 end

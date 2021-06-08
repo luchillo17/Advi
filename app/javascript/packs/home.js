@@ -15,7 +15,7 @@ const homeInit = async () => {
     minLength: 2,
     onAutocomplete: (text) => {
       const url = new URL(location.href);
-      url.searchParams.set("q", text);
+      url.searchParams.append("q[]", text);
 
       Turbolinks.visit(url.toString());
     },

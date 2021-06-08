@@ -1,7 +1,7 @@
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper center">
-      <a id='logo' href="/">ADVI</a>
+    <%= link_to_with_locale "ADVI", root_path, id: "logo" %>
 
       <div id='page-title'>
         <%= yield :page_title %>

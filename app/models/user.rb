@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :experiences, through: :user_experience
 
   def self.find_by_experience(q)
-    User.joins(:experiences).where("experiences.title LIKE ?", "%#{q}%")
+    query_items_like = q.map {|query| "%#{query}%"}
+    User.joins(:experiences).where("experiences.title ILIKE any (array [?])", query_items_like)
   end
 end
