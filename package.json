@@ -2,15 +2,19 @@
   "name": "advi",
   "private": true,
   "dependencies": {
+    "@materializecss/materialize": "^1.1.0-alpha",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.0",
-    "materialize-css": "^1.0.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@types/materialize-css": "^1.0.10",
     "webpack-dev-server": "^3.11.2"
+  },
+  "resolutions": {
+    "@rails/webpacker/**/sass": "1.32.12"
   }
 }

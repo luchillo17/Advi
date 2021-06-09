@@ -1,5 +1,3 @@
-<%= javascript_pack_tag :home, 'data-turbolinks-track': 'reload'  %>
-
 <% content_for :page_title do %>
   <span><%= t :find_advisory %></span>
 <% end %>
@@ -21,7 +19,7 @@
     <% @query.each do |q| %>
       <div class="chip">
         <%= q %>
-        <i class="close material-icons">close</i>
+        <i class="close material-icons" data-query="<%= q %>">close</i>
       </div>
     <% end %>
   </div>
@@ -41,3 +39,5 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_pack_tag :home, 'data-turbolinks-track': 'reload'  %>

@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-@import "~materialize-css/sass/components/_color-variables.scss";
+@import "~@materializecss/materialize/sass/components/_color-variables.scss";
 
 $primary-color: color("deep-purple", "base") !default;
 $secondary-color: color("green", "base") !default;
 $card-padding: 1rem;
 
-@import "~materialize-css/sass/components/_variables.scss";
+@import "~@materializecss/materialize/sass/components/_variables.scss";
 
 $card-link-color: $link-color;
 
-@import "materialize-css";
+@import "~@materializecss/materialize";
 
 // #region App Styles
 * {

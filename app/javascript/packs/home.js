@@ -1,4 +1,9 @@
 const homeInit = async () => {
+  autoCompleteInit();
+  chipsInit();
+};
+
+const autoCompleteInit = async () => {
   const autocomplete = document.querySelector("#autocomplete-input");
 
   const experiences = (await (await fetch("/experiences.json")).json()) || [];
@@ -7,23 +12,60 @@ const homeInit = async () => {
     return acum;
   }, {});
 
-  console.log("Experiences: ", experiences, autocomplete);
-
-  const instances = M.Autocomplete.init(autocomplete, {
+  M.Autocomplete.init(autocomplete, {
     data,
     limit: 10,
     minLength: 2,
     onAutocomplete: (text) => {
       const url = new URL(location.href);
-      url.searchParams.append("q[]", text);
+      let queries = url.searchParams.getAll("q[]");
 
-      Turbolinks.visit(url.toString());
+      queries.push(text);
+
+      queries = [...new Set(queries)];
+
+      setQueries(url, queries);
     },
   });
 };
 
+const chipsInit = async () => {
+  const chips = document.querySelectorAll(".chip i.close");
+
+  for (let chip of chips) {
+    chip.addEventListener(
+      "click",
+      ({ target }) => {
+        const {
+          dataset: { query },
+        } = target;
+        const url = new URL(location.href);
+        const queries = url.searchParams
+          .getAll("q[]")
+          .filter((q) => q !== query);
+
+        setQueries(url, queries);
+      },
+      { once: true }
+    );
+  }
+};
+
+const setQueries = (url, queries) => {
+  url.searchParams.delete("q[]");
+
+  for (let q of queries) {
+    url.searchParams.append("q[]", q);
+  }
+
+  Turbolinks.visit(url.toString());
+};
+
 if (document.readyState === "complete") {
-  homeInit();
+  // Delay a little for race condition on self navigation
+  setTimeout(() => {
+    homeInit();
+  }, 300);
 } else {
-  addEventListener("turbolinks:load", homeInit);
+  addEventListener("turbolinks:load", homeInit, { once: true });
 }

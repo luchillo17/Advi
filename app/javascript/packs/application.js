@@ -9,12 +9,12 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 
 import "../stylesheets/application";
-import "materialize-css";
+import "@materializecss/materialize";
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
 addEventListener("turbolinks:load", () => {
-  M.AutoInit();
+  M.AutoInit(document.body);
 });
