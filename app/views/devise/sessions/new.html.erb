@@ -3,9 +3,13 @@
 
   <div class="card">
     <div class="card-content">
+
       <span class="card-title"><%= t('.sign_in') %></span>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <%= render "devise/shared/error_messages", resource: resource %>
+
         <div class="field">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -27,7 +31,7 @@
 
         <%= f.button type: :submit, class: 'btn waves-effect waves-light' do %>
           <%= t('.sign_in') %>
-          <i class="material-icons">send</i> 
+          <i class="material-icons">send</i>
         <% end %>
       <% end %>
     </div>
@@ -36,5 +40,4 @@
       <%= render "devise/shared/links" %>
     </div>
   </div>
-
 </div>
