@@ -29,6 +29,10 @@ body {
   grid-template-rows: auto 1fr;
 }
 
+label + em {
+  font-size: 0.8rem;
+}
+
 .nav-wrapper {
   display: flex;
   padding-left: 16px;
