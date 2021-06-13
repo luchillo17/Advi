@@ -39,7 +39,9 @@ const chipsInit = async () => {
         const {
           dataset: { query },
         } = target;
+
         const url = new URL(location.href);
+
         const queries = url.searchParams
           .getAll("q[]")
           .filter((q) => q !== query);

@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :user_experience
   has_many :experiences, through: :user_experience
 
-  def self.find_by_experience(q)
-    query_items_like = q.map {|query| "%#{query}%"}
+  def self.find_by_experience(query_params)
+    query_items_like = query_params.map { |query| "%#{query}%"}
     User.joins(:experiences).where("experiences.title ILIKE any (array [?])", query_items_like)
   end
 end
