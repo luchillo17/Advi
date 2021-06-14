@@ -179,3 +179,17 @@ label + em {
   }
 }
 // #endregion
+
+// #region Profile styles
+#profile-container {
+  gap: 1rem;
+  display: grid;
+  padding: 1rem;
+  align-content: flex-start;
+
+  .card-panel,
+  .card {
+    margin: 0;
+  }
+}
+// #endregion

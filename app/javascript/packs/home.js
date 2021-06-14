@@ -1,7 +1,6 @@
 const homeInit = async () => {
   autoCompleteInit();
   chipsInit();
-  sideMenuInit();
 };
 
 const autoCompleteInit = async () => {
@@ -62,25 +61,6 @@ const setQueries = (url, queries) => {
   }
 
   Turbolinks.visit(url.toString());
-};
-
-const sideMenuInit = () => {
-  const sideMenu = document.querySelector(".sidenav");
-
-  const instance = M.Sidenav.init(sideMenu, {
-    edge: "right",
-  });
-
-  document.addEventListener(
-    "turbolinks:before-cache",
-    () => {
-      // @ts-ignore
-      if (instance._overlay && instance._overlay.parentNode) {
-        instance.destroy();
-      }
-    },
-    { once: true }
-  );
 };
 
 if (document.readyState === "complete") {

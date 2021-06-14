@@ -26,17 +26,19 @@
 
   <div id="user-container">
     <% @users.each do |user| %>
-      <div class="card">
-        <div class="card-image">
-          <img src="https://picsum.photos/200/300">
-          <span class="card-title"><%= user.email %></span>
-        </div>
+      <%= link_to user do %>
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/200/300">
+            <span class="card-title"><%= user.email %></span>
+          </div>
 
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

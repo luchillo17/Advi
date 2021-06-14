@@ -1,0 +1,28 @@
+<% content_for :page_title do %>
+  <span><%= t :profile %></span>
+<% end %>
+
+<%= render "header" %>
+
+<div id="profile-container">
+
+  <% unless notice.nil? %>
+    <div id="notice" class="card-panel"><%= notice %></div>
+  <% end %>
+
+  <div class="card">
+    <div class="card-content">
+
+      <p>
+        <strong>Email:</strong>
+        <%= @user.email %>
+      </p>
+
+      <p>
+        <strong>Created at:</strong>
+        <%= @user.created_at %>
+      </p>
+
+    </div>
+  </div>
+</div>

@@ -17,4 +17,28 @@ ActiveStorage.start();
 
 addEventListener("turbolinks:load", () => {
   M.AutoInit(document.body);
+  sideMenuInit();
 });
+
+const sideMenuInit = () => {
+  const sideMenu = document.querySelector(".sidenav");
+
+  if (!sideMenu) {
+    return;
+  }
+
+  const instance = M.Sidenav.init(sideMenu, {
+    edge: "right",
+  });
+
+  document.addEventListener(
+    "turbolinks:before-cache",
+    () => {
+      // @ts-ignore
+      if (instance._overlay && instance._overlay.parentNode) {
+        instance.destroy();
+      }
+    },
+    { once: true }
+  );
+};
