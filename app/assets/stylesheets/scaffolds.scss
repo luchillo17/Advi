@@ -1,12 +1,12 @@
 pre {
-  padding: 10px;
+  padding: 1rem;
   font-size: 11px;
   background-color: #eee;
 }
 
 div.field,
 div.actions {
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
 }
 
 #notice {
@@ -15,7 +15,7 @@ div.actions {
 
 #error_explanation {
   border: 2px solid red;
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
   background-color: #f0f0f0;
 
   h2 {
