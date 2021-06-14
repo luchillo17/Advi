@@ -27,9 +27,10 @@
   <div id="user-container">
     <% @users.each do |user| %>
       <%= link_to user do %>
-        <div class="card">
+        <div class="card hoverable">
           <div class="card-image">
             <img src="https://picsum.photos/200/300">
+
             <span class="card-title"><%= user.email %></span>
           </div>
 

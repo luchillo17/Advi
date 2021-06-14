@@ -7,16 +7,16 @@
 <div id="profile-container">
 
   <% unless notice.nil? %>
-    <div id="notice" class="card-panel"><%= notice %></div>
+    <div id="notice" class="card-panel deep-purple"><%= notice %></div>
   <% end %>
 
   <div class="card">
-    <div class="card-content">
+    <div class="card-image green">
+      <img src="https://picsum.photos/300/300" alt="">
+    </div>
 
-      <p>
-        <strong>Email:</strong>
-        <%= @user.email %>
-      </p>
+    <div class="card-content">
+      <span class="card-title"><%= @user.email %></span>
 
       <p>
         <strong>Created at:</strong>

@@ -191,5 +191,16 @@ label + em {
   .card {
     margin: 0;
   }
+
+  .card {
+    .card-image {
+      --image-size: 240px;
+
+      img {
+        height: var(--image-size);
+        object-fit: contain;
+      }
+    }
+  }
 }
 // #endregion
