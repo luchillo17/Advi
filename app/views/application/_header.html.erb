@@ -1,37 +1,31 @@
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper center">
-    <%= link_to_with_locale "ADVI", root_path, id: "logo" %>
+      <%= link_to_with_locale "ADVI", root_path, id: "logo" %>
 
       <div id='page-title'>
         <%= yield :page_title %>
       </div>
-      
+
       <a
         id="menu-icon-container"
-        class="dropdown-trigger btn-flat white-text"
         href="#"
-        data-target="dropdown1"
+        class="sidenav-trigger btn-flat white-text"
+        data-target="app-side-nav"
       >
         <i class="material-icons">menu</i>
       </a>
 
-      <!-- Dropdown Structure -->
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider" tabindex="-1"></li>
-        <li><a href="#!">three</a></li>
-        <li>
-          <a href="#!"><i class="material-icons">view_module</i>four</a>
-        </li>
-        <li>
-          <%= button_to "login", user_session_path, class: "btn waves-effect waves-light"  %>
-        </li>
-        <li>
-          <%= button_to "logout", destroy_user_session_path, method: :delete, class: "btn waves-effect waves-light"  %>
-        </li>
-      </ul>
     </div>
   </nav>
 </div>
+
+<!-- App side nav for menu click -->
+<ul id="app-side-nav" class="sidenav no-autoinit" edge="right">
+  <li>
+    <%= link_to_with_locale t("devise.sessions.new.sign_in"), user_session_path, class: "btn waves-effect waves-light" %>
+  </li>
+  <li>
+    <%= link_to_with_locale t("sign_out"), destroy_user_session_path, method: :delete, class: "btn waves-effect waves-light"  %>
+  </li>
+</ul>

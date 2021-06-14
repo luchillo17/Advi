@@ -10,7 +10,7 @@
 
         <%= render "devise/shared/error_messages", resource: resource %>
 
-        <% if flash[:alert] %>
+        <% unless flash[:alert].nil? %>
           <div class="card-panel amber">
             <%= flash[:alert] %>
           </div>
