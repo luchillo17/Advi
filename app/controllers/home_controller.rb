@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       return
     end
 
-    @users = User.all
+    @users = User.all_with_experiences_avatars.all
   end
 
   private

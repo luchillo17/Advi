@@ -27,16 +27,35 @@
   <div id="user-container">
     <% @users.each do |user| %>
       <%= link_to user do %>
-        <div class="card hoverable">
+        <div class="card hoverable black-text">
           <div class="card-image">
-            <img src="https://picsum.photos/200/300">
+            <% if user.avatar.attached? %>
+              <%= image_tag url_for(@user.avatar) %>
+            <% else %>
+              <svg class="avatar-placeholder" viewBox="2 1 12 13">
+                <text x="1" y="15">account_circle</text>
+              </svg>
+            <% end %>
 
-            <span class="card-title"><%= user.email %></span>
           </div>
 
           <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+            <span class="card-title"><%= user.email %></span>
+
+            <div class="user-score">
+              <i class="material-icons green-text">star</i> <span>4.26 (19) - Col</span>
+            </div>
+
+            <% if user.experiences.any? %>
+              <div class="user-expertise">
+                <%= user.experiences.map(&:title).join ' - ' %>
+              </div>
+            <% end %>
+
+            <div class="user-time-rate ">
+              <span class="time-rate">$10.000</span> <span class="grey-text">/ 15 min</span>
+            </div>
+
           </div>
         </div>
       <% end %>
