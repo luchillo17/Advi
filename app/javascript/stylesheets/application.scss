@@ -236,6 +236,11 @@ label + em {
         object-fit: contain;
         border-radius: 50%;
       }
+
+      i {
+        font-size: var(--image-size);
+        margin: -10px;
+      }
     }
   }
 }

@@ -12,7 +12,11 @@
 
   <div class="card">
     <div class="card-image">
-      <img src="https://picsum.photos/300/300" alt="">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar %>
+      <% else %>
+        <i class="material-icons">account_circle</i>
+      <% end %>
     </div>
 
     <div class="card-content">
