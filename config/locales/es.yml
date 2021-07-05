@@ -1,5 +1,10 @@
 es:
+  about_me_&_contact: "Acerca de mi y contacto"
+  expertise: "Experiencia"
   explore: "Explore"
   find_advisory: "Busque Asesoría"
+  message: "Mensaje"
+  profile_rate: "USD $%{rate} por cada 15 mins"
   profile: "Perfil"
+  reviews: "Reseñas"
   sign_out: "Cerrar sesión"

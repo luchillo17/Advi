@@ -14,6 +14,7 @@ $card-link-color: $link-color;
 
 :root {
   --min-column-size: 170px;
+  --card-background-color: #e5e5e5;
 }
 
 // #region App Styles
@@ -223,6 +224,8 @@ label + em {
   }
 
   .card {
+    background-color: var(--card-background-color);
+
     .card-image {
       --image-size: 200px;
 
@@ -240,6 +243,25 @@ label + em {
       i {
         font-size: var(--image-size);
         margin: -10px;
+      }
+    }
+
+    .card-content {
+      gap: 0.5rem;
+      display: grid;
+      justify-items: center;
+
+      .card-title {
+        margin: 0;
+      }
+
+      .collapsible {
+        width: 100%;
+
+        .collapsible-header {
+          font-weight: bold;
+          justify-content: center;
+        }
       }
     }
   }

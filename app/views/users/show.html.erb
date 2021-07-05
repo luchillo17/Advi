@@ -20,12 +20,28 @@
     </div>
 
     <div class="card-content">
-      <span class="card-title"><%= @user.email %></span>
+      <span class="card-title"><%= @user.name || @user.email %></span>
+
+      <%= link_to_with_locale t("message"), "#", class: "btn waves-effect waves-light" %>
 
       <p>
-        <strong>Created at:</strong>
-        <%= @user.created_at %>
+        <%= t("profile_rate", rate: @user.rate) %>
       </p>
+
+      <ul class="collapsible">
+        <li>
+          <div class="collapsible-header"><%= t("about_me_&_contact") %></div>
+          <div class="collapsible-body"></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><%= t("expertise") %></div>
+          <div class="collapsible-body"></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><%= t("reviews") %></div>
+          <div class="collapsible-body"></div>
+        </li>
+      </ul>
 
     </div>
   </div>

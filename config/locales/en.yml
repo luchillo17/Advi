@@ -30,7 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  about_me_&_contact: "About me & contact"
+  expertise: "Expertise"
   explore: "Explore"
   find_advisory: "Find Advisory"
+  message: "Message"
+  profile_rate: "USD $%{rate} for every 15 mins"
   profile: "Profile"
+  reviews: "Reviews"
   sign_out: "Log out"
