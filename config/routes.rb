@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :users, path: :auth
-  resources :users, only: %i[show edit]
+  resources :users, only: %i[show edit update]
 
   resources :experiences
   resources :user_experiences

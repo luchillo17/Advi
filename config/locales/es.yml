@@ -1,5 +1,7 @@
 es:
   about_me_&_contact: "Acerca de mi y contacto"
+  edit_bio: "Editar bio para %{name}"
+  empty_bio: "No hay bio"
   expertise: "Experiencia"
   explore: "Explore"
   find_advisory: "Busque Asesoría"

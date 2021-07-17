@@ -259,10 +259,28 @@ label + em {
         width: 100%;
 
         .collapsible-header {
+          position: relative;
           font-weight: bold;
           justify-content: center;
+
+          button {
+            top: 50%;
+            right: 1rem;
+            position: absolute;
+            transform: translateY(-50%);
+
+            i {
+              margin: 0;
+            }
+          }
         }
       }
+    }
+  }
+
+  #about-contact-modal {
+    h4 {
+      word-break: break-all;
     }
   }
 }

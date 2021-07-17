@@ -31,6 +31,8 @@
 
 en:
   about_me_&_contact: "About me & contact"
+  edit_bio: "Edit bio for %{name}"
+  empty_bio: "There's no bio"
   expertise: "Expertise"
   explore: "Explore"
   find_advisory: "Find Advisory"
